@@ -57,9 +57,9 @@ const Signup = () => {
                 />
                 <Button type='submit'>Sign up</Button>
                 <span>
-                    Don't have an account?{' '}
-                    <Link href='/sign-up' className='text-blue-500 underline'>
-                        Sign up
+                    Already have an account?{' '}
+                    <Link href='/login' className='text-blue-500 underline'>
+                        Login
                     </Link>
                 </span>
             </form>
