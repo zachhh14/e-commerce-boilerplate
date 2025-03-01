@@ -20,7 +20,6 @@ export default function LoginPage() {
 
         try {
             const response = await login(formData)
-            console.log(response)
         } catch (error) {
             setError('Invalid email or password')
         }
