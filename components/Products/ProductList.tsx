@@ -9,6 +9,7 @@ import {
     CardTitle,
 } from '@/components/ui/card'
 import Image from 'next/image'
+import Link from 'next/link'
 
 // You can move this to a separate types file later
 type Product = {
@@ -101,9 +102,12 @@ export function ProductList() {
                                 {product.description}
                             </p>
                         </CardContent>
-                        <CardFooter className='flex justify-between'>
-                            <Button variant='outline'>Learn More</Button>
-                            <Button>Buy Now</Button>
+                        <CardFooter className='flex justify-end'>
+                            <Button asChild>
+                                <Link href={`/products/${product.id}`}>
+                                    Buy Now
+                                </Link>
+                            </Button>
                         </CardFooter>
                     </Card>
                 ))}
