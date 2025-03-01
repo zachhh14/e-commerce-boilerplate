@@ -2,6 +2,7 @@
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
+import Image from 'next/image'
 
 // Example data - replace with your actual data fetching
 const PRODUCT_DATA = {
@@ -29,28 +30,32 @@ const PRODUCT_DATA = {
     ],
 }
 
-export const ProductDetails = ({ id }: { id: string }) => {
+export const ProductDetails = () => {
     return (
         <div className='max-w-7xl mx-auto px-4 py-12'>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-12'>
                 <div className='space-y-4'>
                     <div className='aspect-video overflow-hidden rounded-lg'>
-                        <img
+                        <Image
                             src={PRODUCT_DATA.images[0]}
                             alt={PRODUCT_DATA.name}
                             className='w-full h-full object-cover'
+                            width={400}
+                            height={400}
                         />
                     </div>
                     <div className='grid grid-cols-3 gap-4'>
-                        {PRODUCT_DATA.images.slice(1).map((image,index) => (
+                        {PRODUCT_DATA.images.slice(1).map((image, index) => (
                             <div
                                 key={image}
                                 className='aspect-video rounded-lg overflow-hidden'
                             >
-                                <img
+                                <Image
                                     src={image}
                                     alt={`${PRODUCT_DATA.name}-image-${index}`}
                                     className='w-full h-full object-cover hover:scale-105 transition-transform'
+                                    width={400}
+                                    height={400}
                                 />
                             </div>
                         ))}

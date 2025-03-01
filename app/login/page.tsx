@@ -20,9 +20,10 @@ export default function LoginPage() {
         setError('')
 
         try {
-            const response = await login(formData)
+            await login(formData)
         } catch (error) {
             setError('Invalid email or password')
+            console.error(error)
         }
     }
 
@@ -48,7 +49,7 @@ export default function LoginPage() {
                 />
                 <Button type='submit'>Log in</Button>
                 <span>
-                    Don't have an account?{' '}
+                    Don{"'"}t have an account?{" "}
                     <Link href='/sign-up' className='text-blue-500 underline'>
                         Sign up
                     </Link>

@@ -8,6 +8,7 @@ import {
     CardHeader,
     CardTitle,
 } from '@/components/ui/card'
+import Image from 'next/image'
 
 // You can move this to a separate types file later
 type Product = {
@@ -79,10 +80,12 @@ export function ProductList() {
                 {products.map((product) => (
                     <Card key={product.id} className='overflow-hidden'>
                         <div className='aspect-video relative overflow-hidden'>
-                            <img
+                            <Image
                                 src={product.image}
                                 alt={product.name}
                                 className='object-cover w-full h-full hover:scale-105 transition-transform duration-300'
+                                width={400}
+                                height={400}
                             />
                         </div>
                         <CardHeader>

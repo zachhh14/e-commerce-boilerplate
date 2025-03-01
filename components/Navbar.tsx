@@ -5,7 +5,7 @@ import { useState } from 'react'
 
 export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
-    const [isLoggedIn, setIsLoggedIn] = useState(true)
+    const isLoggedIn = true
 
     const TABS = [
         { label: 'Home', href: '/' },
