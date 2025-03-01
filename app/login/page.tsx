@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { login } from './actions'
 import { useState } from 'react'
+import { Button } from '@/components/ui/button'
 
 export default function LoginPage() {
     const [error, setError] = useState('')
@@ -19,9 +20,10 @@ export default function LoginPage() {
         setError('')
 
         try {
-            const response = await login(formData)
+            await login(formData)
         } catch (error) {
             setError('Invalid email or password')
+            console.error(error)
         }
     }
 
@@ -45,9 +47,9 @@ export default function LoginPage() {
                     type='password'
                     required
                 />
-                <button type='submit'>Log in</button>
+                <Button type='submit'>Log in</Button>
                 <span>
-                    Don't have an account?{' '}
+                    Don{"'"}t have an account?{" "}
                     <Link href='/sign-up' className='text-blue-500 underline'>
                         Sign up
                     </Link>
