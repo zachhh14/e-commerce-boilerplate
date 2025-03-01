@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { signup } from './action'
 import { useState } from 'react'
+import { Button } from '@/components/ui/button'
 
 const Signup = () => {
     const [error, setError] = useState('')
@@ -54,7 +55,7 @@ const Signup = () => {
                     type='password'
                     required
                 />
-                <button type='submit'>Sign up</button>
+                <Button type='submit'>Sign up</Button>
                 <span>
                     Don't have an account?{' '}
                     <Link href='/sign-up' className='text-blue-500 underline'>
