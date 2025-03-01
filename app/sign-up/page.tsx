@@ -1,28 +1,29 @@
 'use client'
 
 import Link from 'next/link'
-import { login } from './actions'
+import { signup } from './action'
 import { useState } from 'react'
 
-export default function LoginPage() {
+const Signup = () => {
     const [error, setError] = useState('')
 
     const handleSubmit = async (formData: FormData) => {
         const email = formData.get('email')
         const password = formData.get('password')
+        const confirmPassword = formData.get('confirmPassword')
 
-        if (!email || !password) {
+        if (!email || !password || !confirmPassword) {
             setError('Please fill in all fields')
             return
         }
 
-        setError('')
-
-        try {
-            const response = await login(formData)
-        } catch (error) {
-            setError('Invalid email or password')
+        if (password !== confirmPassword) {
+            setError('Passwords do not match')
+            return
         }
+
+        setError('')
+        await signup(formData)
     }
 
     return (
@@ -45,7 +46,15 @@ export default function LoginPage() {
                     type='password'
                     required
                 />
-                <button type='submit'>Log in</button>
+                <label htmlFor='confirmPassword'>Confirm Password:</label>
+                <input
+                    className='bg-white text-black rounded-md p-2'
+                    id='confirmPassword'
+                    name='confirmPassword'
+                    type='password'
+                    required
+                />
+                <button type='submit'>Sign up</button>
                 <span>
                     Don't have an account?{' '}
                     <Link href='/sign-up' className='text-blue-500 underline'>
@@ -56,3 +65,5 @@ export default function LoginPage() {
         </div>
     )
 }
+
+export default Signup
