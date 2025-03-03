@@ -1,6 +1,6 @@
-import Footer from '@/components/Footer'
+import Footer from '@/components/footer'
 import HeroCarousel from '@/components/hero-carousel'
-import Navbar from '@/components/Navbar'
+import Navbar from '@/components/navbar'
 import ProductList from '@/components/Products/product-list'
 
 const Home = () => {
