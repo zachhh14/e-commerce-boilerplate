@@ -1,4 +1,4 @@
-import { ProductForm } from '@/components/Products/product-form'
+import ProductForm from '@/components/products/product-form'
 
 const Products = () => {
     return (

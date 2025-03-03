@@ -26,7 +26,7 @@ const formSchema = z.object({
     description: z.string().min(1, 'Description is required'),
 })
 
-export const ProductForm = () => {
+const ProductForm = () => {
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -114,3 +114,5 @@ export const ProductForm = () => {
         </Dialog>
     )
 }
+
+export default ProductForm
