@@ -1,7 +1,7 @@
-import { Navbar } from '@/components/Navbar'
-import { HeroCarousel } from '@/components/HeroCarousel'
-import { ProductList } from '@/components/Products/ProductList'
-import { Footer } from '@/components/Footer'
+import Footer from '@/components/Footer'
+import HeroCarousel from '@/components/hero-carousel'
+import Navbar from '@/components/Navbar'
+import ProductList from '@/components/Products/product-list'
 
 const Home = () => {
     return (

@@ -1,6 +1,6 @@
 'use client'
 
-export function Footer() {
+const Footer = () => {
     return (
         <footer className='bg-black text-white pt-16 pb-4'>
             <div className='max-w-7xl mx-auto px-4'>
@@ -80,3 +80,5 @@ export function Footer() {
         </footer>
     )
 }
+
+export default Footer

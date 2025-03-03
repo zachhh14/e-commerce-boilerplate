@@ -33,7 +33,7 @@ const CAROUSEL_ITEMS = [
     },
 ]
 
-export const HeroCarousel = () => {
+const HeroCarousel = () => {
     const [isMounted, setIsMounted] = useState(false)
 
     useEffect(() => {
@@ -90,3 +90,5 @@ export const HeroCarousel = () => {
         </Carousel>
     )
 }
+
+export default HeroCarousel
