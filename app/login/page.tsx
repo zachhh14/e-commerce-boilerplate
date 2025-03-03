@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 
 export default function LoginPage() {
     const [error, setError] = useState('')
+    const [isLoading, setIsLoading] = useState(false)
 
     const handleSubmit = async (formData: FormData) => {
         const email = formData.get('email')
@@ -20,10 +21,13 @@ export default function LoginPage() {
         setError('')
 
         try {
+            setIsLoading(true)
             await login(formData)
         } catch (error) {
             setError('Invalid email or password')
             console.error(error)
+        } finally {
+            setIsLoading(false)
         }
     }
 
@@ -47,9 +51,11 @@ export default function LoginPage() {
                     type='password'
                     required
                 />
-                <Button type='submit'>Log in</Button>
+                <Button type='submit' disabled={isLoading}>
+                    {isLoading ? 'Logging in...' : 'Log in'}
+                </Button>
                 <span>
-                    Don{"'"}t have an account?{" "}
+                    Don{"'"}t have an account?{' '}
                     <Link href='/sign-up' className='text-blue-500 underline'>
                         Sign up
                     </Link>
