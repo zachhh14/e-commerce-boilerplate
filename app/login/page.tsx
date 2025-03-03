@@ -55,7 +55,7 @@ export default function LoginPage() {
                     {isLoading ? 'Logging in...' : 'Log in'}
                 </Button>
                 <span>
-                    Don{"'"}t have an account?{' '}
+                    Don{"'"}t have an account?{" "}
                     <Link href='/sign-up' className='text-blue-500 underline'>
                         Sign up
                     </Link>
