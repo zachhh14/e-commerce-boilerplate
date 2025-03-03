@@ -15,6 +15,7 @@ export const Navbar = () => {
         { label: 'Client Releases', href: '/client-releases' },
         { label: 'Careers', href: '/careers' },
         { label: 'Location', href: '/location' },
+        { label: 'Login', href: '/login' },
     ]
 
     if (!isLoggedIn) {
